@@ -124,59 +124,39 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#FADFDA" />
-
       <ScrollView>
         <View style={{paddingHorizontal: 0, backgroundColor: '#FADFDA'}}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingLeft: 18,
-              paddingRight: 22,
-              marginTop: 10,
-            }}>
+          <View style={styles.headerTopRow}>
             <Image
               source={icons.chicPink}
               style={{width: 40, height: 40, resizeMode: 'contain'}}
             />
-            <Image
-              source={icons.ham}
-              style={{width: 23, height: 28, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity onPress={() => Alert.alert('Menu Icon Pressed')}>
+              <Image
+                source={icons.ham}
+                style={{width: 23, height: 28, resizeMode: 'contain'}}
+              />
+            </TouchableOpacity>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingLeft: 32,
-              paddingRight: 20,
-              marginTop: 50,
-              marginBottom: 30,
-            }}>
+          <View style={styles.headerSecondRow}>
             <Image
               source={icons.heySis}
               style={{width: 80, height: 30, resizeMode: 'contain'}}
             />
-            <Image
-              source={icons.profilePic}
-              style={{
-                width: 47,
-                height: 47,
-                resizeMode: 'contain',
-                paddingLeft: 10,
-              }}
-            />
+            <TouchableOpacity
+              onPress={() => Alert.alert('Profile Icon Pressed')}>
+              <Image
+                source={icons.profilePic}
+                style={{
+                  width: 47,
+                  height: 47,
+                  resizeMode: 'contain',
+                  paddingLeft: 10,
+                }}
+              />
+            </TouchableOpacity>
           </View>
-          <Text
-            style={{
-              color: 'black',
-              fontSize: 40,
-              fontWeight: '700',
-              paddingLeft: 32,
-              marginBottom: 88,
-            }}>
+          <Text style={styles.largerText}>
             Connect with{`\n`}your August{`\n`}Sistahs.
           </Text>
         </View>
@@ -189,14 +169,9 @@ const HomeScreen = () => {
             contentContainerStyle={{paddingLeft: 16}}
           />
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            marginRight: 32,
-            marginTop: 20,
-          }}>
+        <TouchableOpacity
+          onPress={() => Alert.alert('View all members pressed')}
+          style={styles.viewAllText}>
           <Text
             style={{
               alignSelf: 'flex-end',
@@ -210,7 +185,7 @@ const HomeScreen = () => {
             source={icons.arrow}
             style={{width: 12, height: 12, resizeMode: 'contain'}}
           />
-        </View>
+        </TouchableOpacity>
         <View>
           <Text
             style={{
@@ -264,6 +239,37 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     paddingHorizontal: 12,
     borderRadius: 100,
+  },
+  headerTopRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingLeft: 18,
+    paddingRight: 22,
+    marginTop: 10,
+  },
+  headerSecondRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingLeft: 32,
+    paddingRight: 20,
+    marginTop: 50,
+    marginBottom: 30,
+  },
+  largerText: {
+    color: 'black',
+    fontSize: 40,
+    fontWeight: '700',
+    paddingLeft: 32,
+    marginBottom: 88,
+  },
+  viewAllText: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginRight: 32,
+    marginTop: 20,
   },
 });
 
